@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial of a number</title>
+</head>
+<body>
+    <h3>Factorial of a number</h3>
+    <label for="num">Enter a number to find its factorial</label>
+    <input type="number" id="num"><br>
+    <button type="submit" id="ok" onclick="return factorial()">Submit</button>
+    <p id="result"></p>
+
+    <script>
+        function factorial(){
+            let num = parseInt(document.getElementById('num').value);
+            let result = document.getElementById('result');
+
+            if (num < 0) {
+                result.innerText = "Factorial is not defined for negative numbers.";
+                return;
+            }
+
+            let factorial = 1;
+            for (let i = 1; i <= num; i++) {
+                factorial *= i;
+            }
+
+            result.innerText = "Factorial of " + num + " is " + factorial;
+}
+        
+    </script>
+</body> 
+</html>
