@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximum and Minimum</title>
+</head>
+<body>
+    <h3>Maximum and Minimum numbers </h3>
+    <script>
+       
+       let numbers = [3, 5, 1, 8, 2, 7];
+        let maxNumber = numbers[0];
+        let minNumber = numbers[0];
+
+        for (let i = 1; i < numbers.length; i++) {
+            if (numbers[i] > maxNumber) {
+                maxNumber = numbers[i];
+            }
+        if (numbers[i] < minNumber) {
+             minNumber = numbers[i];
+        }
+        }
+
+        document.write("Maximum number:", maxNumber);
+        document.write("Minimum number:", minNumber);
+
+
+    </script>
+    
+</body>
+</html>
