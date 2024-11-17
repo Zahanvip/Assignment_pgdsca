@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Pyramid</title>
+    <style>
+        .button {
+            padding: 10px;
+            margin: 10px;
+        }
+        pre {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <h2>Number Pyramid</h2>
+    <button onclick="printNumberPyramid()" class="button">Print Number Pyramid</button>
+    <pre id="result"></pre>
+
+    <script>
+        function printNumberPyramid() {
+            let n = 5;  // Number of rows
+            let result = "";
+            for (let i = 1; i <= n; i++) {
+                result += ' '.repeat(n - i);
+                for (let j = 1; j <= i; j++) {
+                    result += j + ' ';
+                }
+                result += '\n';
+            }
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+</body>
+</html>
