@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome and Goodbye Messages</title>
+</head>
+<body>
+    <script>
+        // Display welcome message when the page loads
+        window.onload = function() {
+            alert("Welcome to the page!");
+        };
+
+        // Display goodbye message when the page is unloaded or closed
+        window.onbeforeunload = function() {
+            return "Bye! Are you sure you want to leave?";
+        };
+    </script>
+</body>
+</html>
