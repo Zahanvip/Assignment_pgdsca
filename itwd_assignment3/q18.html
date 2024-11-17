@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Square and Square Root Calculator</title>
+    <style>
+        .textbox {
+            margin: 5px;
+            padding: 10px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Square and Square Root Calculator</h2>
+    <button onclick="calculateSquareAndRoot()">Enter Number</button>
+    <h3 id="squareResult"></h3>
+    <h3 id="sqrtResult"></h3>
+
+    <script>
+        function calculateSquareAndRoot() {
+            let number = prompt("Please enter a number:");
+            let squareResult = document.getElementById('squareResult');
+            let sqrtResult = document.getElementById('sqrtResult');
+
+            if (number !== null && !isNaN(number) && number.trim() !== "") {
+                number = parseFloat(number);
+                let square = number * number;
+                let squareRoot = Math.sqrt(number);
+                squareResult.innerText = "Square: " + square;
+                sqrtResult.innerText = "Square Root: " + squareRoot;
+            } else {
+                squareResult.innerText = "Please enter a valid number.";
+                sqrtResult.innerText = "";
+            }
+        }
+    </script>
+</body>
+</html>
