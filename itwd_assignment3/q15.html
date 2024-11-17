@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock</title>
+    <style>
+        .button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 18px;
+        }
+        #clock {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Digital Clock</h2>
+    <button class="button" id="clockButton">Show Time</button>
+    <div id="clock"></div>
+
+    <script>
+        function updateClock() {
+            let now = new Date();
+            let hours = now.getHours().toString().padStart(2, '0');
+            let minutes = now.getMinutes().toString().padStart(2, '0');
+            let seconds = now.getSeconds().toString().padStart(2, '0');
+            let timeString = hours + ":" + minutes + ":" + seconds;
+
+            document.getElementById('clockButton').innerText = timeString;
+            document.getElementById('clock').innerText = "Current Time: " + timeString;
+
+           
+            if (window.status !== undefined) {
+                window.status = timeString;
+            }
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
