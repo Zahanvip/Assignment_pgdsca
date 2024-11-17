@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Addition Calculator</title>
+    <style>
+        .textbox {
+            margin: 5px;
+            padding: 10px;
+            width: 200px;
+        }
+        .button {
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Addition Calculator</h2>
+    <input type="text" id="number1" class="textbox" placeholder="Enter first number">
+    <input type="text" id="number2" class="textbox" placeholder="Enter second number">
+    <br>
+    <button onclick="addNumbers()" class="button">ADD</button>
+    <br>
+    <input type="text" id="result" class="textbox" placeholder="Result" readonly>
+    <br>
+    <span id="error" style="color: red;"></span>
+
+    <script>
+        function addNumbers() {
+            let num1 = document.getElementById('number1').value;
+            let num2 = document.getElementById('number2').value;
+            let error = document.getElementById('error');
+            let resultBox = document.getElementById('result');
+
+            error.innerText = "";
+            resultBox.value = "";
+
+            if (!isNumber(num1) || !isNumber(num2)) {
+                error.innerText = "Please enter valid numbers in both textboxes.";
+                return;
+            }
+
+            var sum = parseFloat(num1) + parseFloat(num2);
+            resultBox.value = sum;
+        }
+
+        function isNumber(value) {
+            return !isNaN(value) && value.trim() !== "";
+        }
+    </script>
+</body>
+</html>
 
