@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Square and Cube Calculator</title>
+    <style>
+        .textbox {
+            margin: 5px;
+            padding: 10px;
+            width: 200px;
+        }
+        .button {
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Square and Cube Calculator</h2>
+    <input type="text" id="inputValue" class="textbox" placeholder="Enter a number">
+    <br>
+    <input type="radio" id="square" name="operation" value="square"> <label for="square">Square</label>
+    <input type="radio" id="cube" name="operation" value="cube"> <label for="cube">Cube</label>
+    <br>
+    <input type="text" id="result" class="textbox" placeholder="Result" readonly>
+    <br>
+    <button onclick="calculate()" class="button">Calculate</button>
+
+    <script>
+        function calculate() {
+            let value = parseFloat(document.getElementById('inputValue').value);
+            let result = 0;
+
+            if (document.getElementById('square').checked) {
+                result = value * value;
+            } else if (document.getElementById('cube').checked) {
+                result = value * value * value;
+            }
+
+            document.getElementById('result').value = result;
+        }
+    </script>
+</body>
+</html>
