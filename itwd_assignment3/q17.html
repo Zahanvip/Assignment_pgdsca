@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form with Validations</title>
+    <style>
+        .textbox {
+            margin: 5px;
+            padding: 10px;
+            width: 200px;
+        }
+        .button {
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" class="textbox" placeholder="Enter your name">
+        <span id="nameError" class="error"></span>
+        <br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" class="textbox" placeholder="Enter your email">
+        <span id="emailError" class="error"></span>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" class="textbox" placeholder="Enter your password">
+        <span id="passwordError" class="error"></span>
+        <br>
+        <label for="contact">Contact Number:</label>
+        <input type="text" id="contact" class="textbox" placeholder="Enter your contact number">
+        <span id="contactError" class="error"></span>
+        <br>
+        <button type="submit" class="button">Register</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            // Name validation
+            let name = document.getElementById('name').value;
+            let nameError = document.getElementById('nameError');
+            if (name.trim() === "") {
+                nameError.innerText = "Name is required.";
+                isValid = false;
+            } else {
+                nameError.innerText = "";
+            }
+
+            // Email validation
+            let email = document.getElementById('email').value;
+            let emailError = document.getElementById('emailError');
+            let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (email.trim() === "") {
+                emailError.innerText = "Email is required.";
+                isValid = false;
+            } else if (!emailPattern.test(email)) {
+                emailError.innerText = "Please enter a valid email address.";
+                isValid = false;
+            } else {
+                emailError.innerText = "";
+            }
+
+            // Password validation
+            let password = document.getElementById('password').value;
+            let passwordError = document.getElementById('passwordError');
+            if (password.trim() === "") {
+                passwordError.innerText = "Password is required.";
+                isValid = false;
+            } else if (password.length < 6) {
+                passwordError.innerText = "Password must be at least 6 characters long.";
+                isValid = false;
+            } else {
+                passwordError.innerText = "";
+            }
+
+            // Contact number validation
+            let contact = document.getElementById('contact').value;
+            let contactError = document.getElementById('contactError');
+            let contactPattern = /^[0-9]{10}$/;
+            if (contact.trim() === "") {
+                contactError.innerText = "Contact number is required.";
+                isValid = false;
+            } else if (!contactPattern.test(contact)) {
+                contactError.innerText = "Please enter a valid 10-digit contact number.";
+                isValid = false;
+            } else {
+                contactError.innerText = "";
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>
