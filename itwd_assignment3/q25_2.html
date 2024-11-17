@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inverted Pyramid of Stars</title>
+    <style>
+        .button {
+            padding: 10px;
+            margin: 10px;
+        }
+        pre {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <h2>Inverted Pyramid of Stars</h2>
+    <button onclick="printInvertedPyramid()" class="button">Print Inverted Pyramid</button>
+    <pre id="result"></pre>
+
+    <script>
+        function printInvertedPyramid() {
+            let n = 5;  // Number of rows
+            let result = "";
+            for (let i = n; i >= 1; i--) {
+                result += ' '.repeat(n - i) + '*'.repeat(2 * i - 1) + '\n';
+            }
+            document.getElementById('result').innerText = result;
+        }
+    </script>
+</body>
+</html>
