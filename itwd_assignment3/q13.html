@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Today's Date</title>
+    <style>
+        .textbox {
+            margin: 5px;
+            padding: 10px;
+            width: 200px;
+        }
+        .button {
+            padding: 10px;
+            margin-top: 10px;
+        }
+        #dateDisplay {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Today's Date</h2>
+    <div id="dateDisplay"></div>
+
+    <script>
+        function displayDate() {
+            let now = new Date();
+            let dateStr = now.toDateString();
+            document.getElementById('dateDisplay').innerText = "Today's Date: " + dateStr;
+        }
+
+        // Call the function to display the date
+        displayDate();
+    </script>
+</body>
+</html>
