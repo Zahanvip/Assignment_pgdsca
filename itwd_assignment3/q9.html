@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number and String Operations</title>
+    <style>
+        .textbox {
+            margin: 5px;
+            padding: 10px;
+            width: 200px;
+        }
+        .button {
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Number and String Operations</h2>
+    <input type="text" id="number" class="textbox" placeholder="Enter a number">
+    <button onclick="reverseNumber()" class="button">Reverse Number</button>
+    <h3 id="numberResult"></h3>
+    <br>
+    <input type="text" id="string" class="textbox" placeholder="Enter a string">
+    <button onclick="reverseString()" class="button">Reverse String</button>
+    <button onclick="checkPalindrome()" class="button">Check Palindrome</button>
+    <h3 id="stringResult"></h3>
+
+    <script>
+        function reverseNumber() {
+            let number = document.getElementById('number').value;
+            let reversedNumber = number.split('').reverse().join('');
+            document.getElementById('numberResult').innerText = "Reversed Number: " + reversedNumber;
+        }
+
+        function reverseString() {
+            let str = document.getElementById('string').value;
+            let reversedString = str.split('').reverse().join('');
+            document.getElementById('stringResult').innerText = "Reversed String: " + reversedString;
+        }
+
+        function checkPalindrome() {
+            let str = document.getElementById('string').value;
+            let reversedString = str.split('').reverse().join('');
+            if (str === reversedString) {
+                document.getElementById('stringResult').innerText = str + " is a palindrome.";
+            } else {
+                document.getElementById('stringResult').innerText = str + " is not a palindrome.";
+            }
+        }
+    </script>
+</body>
+</html>
